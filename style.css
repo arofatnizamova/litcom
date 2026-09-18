@@ -1,7 +1,7 @@
 :root {
     --font-family-main: "Hanken Grotesk", sans-serif;
     --font-family-second: "Noto Serif", serif;
-    --color-corp: #21274C;
+    --color-corp: #091D2E;
     --color-corp-2: #1E1E1E;
     --color-light: #D9D9D9;
     --color-secondary: #C3A876;
@@ -92,7 +92,7 @@ a {
 }
 
 .bg-main {
-    background: #EAF5FF;
+    background: #F2F1EE;
 }
 
 .vh-lg-100 {
@@ -224,7 +224,7 @@ a {
 .navbar-collapse.collapse.show,
 .navbar-collapse.collapsing {
     background: var(--color-corp-2) !important;
-    padding: 20px 0px;
+    padding: 20px 0px 20px 10px;
 }
 
 /* custom styles */
@@ -257,6 +257,102 @@ header.scrolled {
     height: 60px;
 }
 
+.icon-size-xs {
+    height: 41px;
+}
+
+.direction-card * {
+    transition: all 0.3s ease;
+}
+
+.height-45 {
+    height: 45px;
+}
+
+.direction-card:hover i {
+    color: var(--color-secondary);
+    transform: translateX(20px);
+}
+
+.line {
+    background: var(--color-secondary);
+    height: 1px;
+    width: 150px;
+}
+
+.custom-accordion {
+    --bs-accordion-bg: transparent;
+    --bs-accordion-border-color: transparent;
+    --bs-accordion-btn-bg: transparent;
+    --bs-accordion-active-bg: transparent;
+    --bs-accordion-active-color: #111;
+    --bs-accordion-btn-focus-box-shadow: none;
+}
+
+.custom-accordion .accordion-item {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #8c8c8c;
+}
+
+.custom-accordion .accordion-button {
+    position: relative;
+
+    padding: 18px 28px 12px 0;
+    font-family: var(--font-family-second);
+    font-size: clamp(0.875rem, 0.825rem + 0.25vw, 1.125rem);
+
+    background: transparent;
+    box-shadow: none;
+
+    color: #111;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    background: transparent;
+    color: #111;
+    box-shadow: none;
+}
+
+/* Убираем стандартную Bootstrap стрелку */
+.custom-accordion .accordion-button::after {
+    content: "×";
+
+    position: absolute;
+    right: 2px;
+    top: 50%;
+
+    width: auto;
+    height: auto;
+
+    margin: 0;
+
+    background-image: none;
+
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1;
+
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+/* Когда открыт */
+.custom-accordion .accordion-button:not(.collapsed)::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+/* Текст ответа */
+.custom-accordion .accordion-body {
+    padding: 0 28px 10px 0;
+
+    color: #777;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
 @media (min-width: 1400px) {
 
     .container,
@@ -266,6 +362,12 @@ header.scrolled {
     .container-xl,
     .container-xxl {
         max-width: 1400px;
+    }
+}
+
+@media(max-width: 1400px) {
+    .direction-card p.text-2xs {
+        height: 55px;
     }
 }
 
@@ -308,6 +410,10 @@ header.scrolled {
     .logo {
         width: 80px;
     }
+
+    .footer-logo {
+        width: 150px;
+    }
 }
 
 @media(max-width: 768px) {
@@ -317,5 +423,11 @@ header.scrolled {
 
     .w-md-50 {
         width: 100%;
+    }
+}
+
+@media(max-width: 576px) {
+    .direction-card p.text-2xs {
+        height: unset;
     }
 }
