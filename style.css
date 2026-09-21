@@ -378,6 +378,39 @@ header.scrolled {
     color: #E6E6E6;
 }
 
+.row-line {
+    position: relative;
+}
+
+.row-line::before {
+    content: '';
+    width: 1px;
+    background: #dee2e6;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.form-control {
+    border-radius: 0;
+    background: transparent;
+    color: white;
+}
+
+.form-control::placeholder {
+    color: white;
+}
+
+.form-control:focus {
+    color: white;
+    background-color: transparent;
+    border-color: var(--color-secondary);
+    outline: 0;
+    box-shadow: none;
+}
+
 @media (min-width: 1400px) {
 
     .container,
@@ -438,6 +471,14 @@ header.scrolled {
 
     .footer-logo {
         width: 150px;
+    }
+
+    .row-line::before {
+        width: 100%;
+        top: 50%;
+        height: 1px;
+        left: 0;
+        transform: translateY(-50%);
     }
 }
 
