@@ -365,6 +365,19 @@ header.scrolled {
     border-color: #525252 !important;
 }
 
+.accordion-light.custom-accordion .accordion-button:not(.collapsed),
+.accordion-light.custom-accordion .accordion-button {
+    color: white;
+}
+
+.accordion-light.custom-accordion .accordion-button::after {
+    color: white;
+}
+
+.accordion-light.custom-accordion .accordion-body {
+    color: #E6E6E6;
+}
+
 @media (min-width: 1400px) {
 
     .container,
